@@ -60,6 +60,12 @@ keymap('x', '<leader>p', '"_dP')
 
 keymap('n', '<leader>dr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'The Substitute Command (Find / Replace)' })
 
+-- Lua
+keymap('n', '<leader>ls', '<cmd>so<CR>', { desc = 'Source the current file' })
+keymap('n', '<leader>ll', '<cmd>.lua<CR>', { desc = 'Execute the current line(s)' })
+keymap('v', '<leader>ll', ':.lua<CR>', { desc = 'Execute the selected lines' })
+keymap('n', '<leader>lx', '<cmd>source %<CR>', { desc = 'Execute the current file' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

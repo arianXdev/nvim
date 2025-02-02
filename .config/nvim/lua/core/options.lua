@@ -36,6 +36,7 @@ end)
 vim.opt.breakindent = true
 
 -- Save undo history
+vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
