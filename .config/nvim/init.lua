@@ -20,6 +20,12 @@ require('lazy').setup {
 
     { 'wakatime/vim-wakatime', lazy = false },
 
+    {
+        'catgoose/nvim-colorizer.lua',
+        event = 'BufReadPre',
+        opts = {},
+    },
+
     { import = 'plugins' },
 }
 
