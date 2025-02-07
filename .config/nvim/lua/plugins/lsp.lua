@@ -132,7 +132,7 @@ return {
         -- Enable the following language servers
         --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
         local servers = {
-            -- pyright = {},
+            pyright = {},
             lua_ls = {
                 settings = {
                     Lua = {
@@ -151,6 +151,7 @@ return {
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             'stylua', -- Used to format Lua code
+            'black', -- Used to format Python code
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
