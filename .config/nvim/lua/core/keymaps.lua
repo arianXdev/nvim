@@ -36,6 +36,8 @@ keymap('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 keymap('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+keymap('n', '<leader>w', ':w<CR>', { desc = 'Write the current buffer' })
+
 -- Delete a single character without copying into register
 keymap('n', 'x', '"_x', opts)
 
