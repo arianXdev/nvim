@@ -5,7 +5,7 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = require 'neofusion.lualine',
+                -- theme = require 'neofusion.lualine',
                 globalstatus = true,
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
