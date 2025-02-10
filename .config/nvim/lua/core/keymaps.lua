@@ -41,6 +41,9 @@ keymap('n', '<leader>w', ':w<CR>', { desc = 'Write the current buffer' })
 -- Delete a single character without copying into register
 keymap('n', 'x', '"_x', opts)
 
+keymap('x', 'p', '"_dP')
+keymap('x', 'P', '"_dP')
+
 -- Buffers
 keymap('n', '<Tab>', ':bnext<CR>', opts)
 keymap('n', '<S-Tab>', ':bprevious<CR>', opts)
@@ -52,15 +55,17 @@ keymap('n', '<C-j>', ':wincmd j<CR>', opts)
 keymap('n', '<C-h>', ':wincmd h<CR>', opts)
 keymap('n', '<C-l>', ':wincmd l<CR>', opts)
 
--- Undotree plugin
-keymap('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree toggle' })
-
 keymap('v', 'J', ":m '>+1<CR>gv=gv")
 keymap('v', 'K', ":m '<-2<CR>gv=gv")
 
-keymap('x', '<leader>p', '"_dP')
+-- Undotree plugin
+keymap('n', '<leader>uu', vim.cmd.UndotreeToggle, { desc = 'Undotree toggle' })
+keymap('n', '<leader>uc', function()
+    vim.fn.system 'rm -rf ~/.vim/undodir'
+    print 'Undo history cleared!'
+end, { desc = 'Clear undo history', noremap = true, silent = true })
 
-keymap('n', '<leader>dr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'The Substitute Command (Find / Replace)' })
+keymap('n', '<leader>dr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'The Substitute command (Find & Replace)' })
 
 -- Lua
 keymap('n', '<leader>ls', '<cmd>so<CR>', { desc = 'Source the current file' })
@@ -72,8 +77,6 @@ keymap('n', '<leader>lx', '<cmd>source %<CR>', { desc = 'Execute the current fil
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
