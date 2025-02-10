@@ -55,8 +55,8 @@ keymap('n', '<C-j>', ':wincmd j<CR>', opts)
 keymap('n', '<C-h>', ':wincmd h<CR>', opts)
 keymap('n', '<C-l>', ':wincmd l<CR>', opts)
 
-keymap('v', 'J', ":m '>+1<CR>gv=gv")
-keymap('v', 'K', ":m '<-2<CR>gv=gv")
+keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
+keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
 
 -- Undotree plugin
 keymap('n', '<leader>uu', vim.cmd.UndotreeToggle, { desc = 'Undotree toggle' })
