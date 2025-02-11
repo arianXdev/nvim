@@ -41,9 +41,6 @@ keymap('n', '<leader>w', ':w<CR>', { desc = 'Write the current buffer' })
 -- Delete a single character without copying into register
 keymap('n', 'x', '"_x', opts)
 
-keymap('x', 'p', '"_dP')
-keymap('x', 'P', '"_dP')
-
 -- Buffers
 keymap('n', '<Tab>', ':bnext<CR>', opts)
 keymap('n', '<S-Tab>', ':bprevious<CR>', opts)
