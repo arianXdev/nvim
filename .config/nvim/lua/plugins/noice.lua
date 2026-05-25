@@ -32,6 +32,37 @@ return {
             },
         },
         messages = { enabled = false },
+        routes = {
+            {
+                filter = {
+                    event = "lsp",
+                    kind = "progress",
+                    cond = function(message)
+                        local client = vim.tbl_get(message.opts, "progress", "client")
+                        return client == "pyright"
+                    end,
+                },
+                opts = { skip = true },
+            },
+            {
+                filter = {
+                    event = "msg_show",
+                    any = {
+                        { find = "pyright" },
+                    },
+                },
+                opts = { skip = true },
+            },
+            {
+                filter = {
+                    event = "notify",
+                    any = {
+                        { find = "pyright" },
+                    },
+                },
+                opts = { skip = true },
+            },
+        },
         lsp = {
             -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
             override = {

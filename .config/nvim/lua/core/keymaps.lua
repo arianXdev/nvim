@@ -70,6 +70,10 @@ keymap('n', '<leader>ll', '<cmd>.lua<CR>', { desc = 'Execute the current line(s)
 keymap('v', '<leader>ll', ':.lua<CR>', { desc = 'Execute the selected lines' })
 keymap('n', '<leader>lx', '<cmd>source %<CR>', { desc = 'Execute the current file' })
 
+-- Python
+keymap('n', '<leader>pr', ':!python %<CR>', { desc = 'Run current Python file' })
+keymap('n', '<leader>r', ':split | term python %<CR>', { desc = 'Run Python in horizontal split' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
